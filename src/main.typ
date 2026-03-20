@@ -125,12 +125,24 @@
   gpa: "",
   location: "",
 ) = {
-  generic-two-by-two(
-    top-left: strong(institution),
-    top-right: dates,
-    bottom-left: degree,
-    bottom-right: emph(location),
-  )
+  context {
+    let format = work-format-state.get()
+    if format == "company-primary" {
+      generic-two-by-two(
+        top-left: strong(institution),
+        top-right: if location != "" { emph(location) },
+        bottom-left: degree,
+        bottom-right: dates,
+      )
+    } else {
+      generic-two-by-two(
+        top-left: strong(institution),
+        top-right: dates,
+        bottom-left: degree,
+        bottom-right: if location != "" { emph(location) },
+      )
+    }
+  }
 }
 
 // Work Experience
