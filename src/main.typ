@@ -125,12 +125,17 @@
   gpa: "",
   location: "",
 ) = {
-  generic-two-by-two(
-    top-left: strong(institution),
-    top-right: dates,
-    bottom-left: degree,
-    bottom-right: emph(location),
-  )
+  context {
+    let format = work-format-state.get()
+    format-two-by-two(
+      format: format,
+      primary: institution,
+      secondary: degree,
+      dates: dates,
+      location: location,
+      swap-primary: false,
+    )
+  }
 }
 
 // Work Experience
@@ -141,24 +146,15 @@
   company: "",
   location: "",
 ) = {
-  // Read the state (requires context)
   context {
     let format = work-format-state.get()
-    if format == "company-primary" {
-      generic-two-by-two(
-        top-left: if company != "" { strong(company) },
-        top-right: if location != "" { emph(location) },
-        bottom-left: title,
-        bottom-right: dates,
-      )
-    } else {
-      generic-two-by-two(
-        top-left: if title != "" { strong(title) },
-        top-right: dates,
-        bottom-left: company,
-        bottom-right: if location != "" { emph(location) },
-      )
-    }
+    format-two-by-two(
+      format: format,
+      primary: company,
+      secondary: title,
+      dates: dates,
+      location: location,
+    )
   }
 }
 

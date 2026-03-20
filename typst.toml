@@ -1,6 +1,6 @@
 [package]
 name = "git-hired"
-version = "0.1.2"
+version = "0.1.3"
 entrypoint = "src/lib.typ"
 authors = ["Orest Tokovenko <www.oresttokovenko.com>"]
 license = "MIT"
