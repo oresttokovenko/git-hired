@@ -28,7 +28,7 @@
   title: "Senior Software Engineer",
   location: "San Francisco, CA",
   company: "TechNova Inc.",
-  dates: dates-helper(start-date: "Jun 2022", end-date: "Present"),
+  dates: date-range(start-date: "Jun 2022", end-date: "Present"),
 )
 - Led migration from monolithic services to microservices using Kubernetes, improving scalability and deployment time by 60% across engineering environments
 - Built and optimized ETL pipelines processing over 1B events per day using Apache Spark and Kafka for real-time data workflows
@@ -39,7 +39,7 @@
   title: "Software Engineer",
   location: "Mountain View, CA",
   company: "DataScape Labs",
-  dates: dates-helper(start-date: "Jul 2020", end-date: "Jun 2022"),
+  dates: date-range(start-date: "Jul 2020", end-date: "Jun 2022"),
 )
 - Designed and implemented a real-time analytics dashboard used by over 50 enterprise clients for operational decision making
 - Improved system throughput by 40% via caching, indexing, and query optimization in PostgreSQL and Redis infrastructure layers
@@ -50,7 +50,7 @@
   title: "Software Engineering Intern",
   location: "Palo Alto, CA",
   company: "CloudBridge Systems",
-  dates: dates-helper(start-date: "May 2019", end-date: "Aug 2019"),
+  dates: date-range(start-date: "May 2019", end-date: "Aug 2019"),
 )
 - Developed internal developer tooling to automate integration testing using Docker and GitLab CI pipelines for backend services
 - Built microservices in Go and deployed to Google Cloud Run, reducing manual test cycles by 70% and simplifying deployment
@@ -61,7 +61,7 @@
   title: "Research Assistant",
   location: "Berkeley, CA",
   company: "UC Berkeley Computer Science Department",
-  dates: dates-helper(start-date: "Sep 2018", end-date: "May 2020"),
+  dates: date-range(start-date: "Sep 2018", end-date: "May 2020"),
 )
 - Assisted in research on distributed systems and cloud computing, publishing findings in peer-reviewed journals and conferences
 - Developed a prototype for a distributed file system using Go, achieving 99.9% fault tolerance in controlled simulations
@@ -75,7 +75,6 @@
   location: "Cambridge, MA",
   dates: "May 2024",
   degree: "PhD, Computer Science",
-  gpa: "GPA: 4.0/4.0",
 )
 
 #edu(
@@ -83,7 +82,6 @@
   location: "Stanford, CA",
   dates: "May 2022",
   degree: "Master of Science, Computer Science",
-  gpa: "GPA: 3.9/4.0",
 )
 
 #edu(
