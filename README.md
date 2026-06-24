@@ -58,14 +58,14 @@ With `company-primary`, you can show promotions by omitting company/location on 
   company: "TechNova Inc.",
   location: "San Francisco, CA",
   title: "Senior Software Engineer",
-  dates: dates-helper(start-date: "Jun 2022", end-date: "Present"),
+  dates: date-range(start-date: "Jun 2022", end-date: "Present"),
 )
 - Accomplishment 1
 - Accomplishment 2
 
 #work(
   title: "Software Engineer",
-  dates: dates-helper(start-date: "Jun 2020", end-date: "Jun 2022"),
+  dates: date-range(start-date: "Jun 2020", end-date: "Jun 2022"),
 )
 - Accomplishment 1
 - Accomplishment 2

@@ -1,4 +1,4 @@
 // Package Entrypoint
 
-#import "./main.typ": *
-#import "./helper.typ": *
+#import "./main.typ": resume, work, edu, certifications
+#import "./helper.typ": date-range

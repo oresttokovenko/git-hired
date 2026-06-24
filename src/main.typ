@@ -22,7 +22,7 @@
   paper: "us-letter",
   author-font-size: 25pt,
   font-size: 10pt,
-  word-spacing: 70%,
+  letter-spacing: 70%,
   work-format: "job-title-primary",
   body,
 ) = {
@@ -40,7 +40,7 @@
     font: font,
     size: font-size,
     lang: "en",
-    spacing: word-spacing,
+    spacing: letter-spacing,
     // Disable ligatures so ATS systems do not get confused when parsing fonts
     ligatures: false,
   )
@@ -75,6 +75,11 @@
   // Level 1 Heading
   [= #(author)]
 
+  // Pronouns
+  if pronouns != "" {
+    align(author-position, text(size: 0.85em)[(#pronouns)])
+  }
+
   // Personal Info Helper
   let contact-item(value, prefix: "", link-type: "") = {
     if value != "" {
@@ -99,14 +104,15 @@
       )
 
       let items = raw_items.filter(x => x != none)
-      let half = calc.floor(items.len() / 2)
+      let half = calc.ceil(items.len() / 2)
       let line1 = items.slice(0, half).join("  |  ")
       let line2 = items.slice(half, items.len()).join("  |  ")
 
-      [
-        #line1 \
-        #line2
-      ]
+      if line2 != "" {
+        [#line1 \ #line2]
+      } else {
+        [#line1]
+      }
     }
   ]
 
@@ -127,10 +133,15 @@
 ) = {
   context {
     let format = work-format-state.get()
+    let degree-text = if gpa != "" {
+      degree + "  –  " + gpa
+    } else {
+      degree
+    }
     format-two-by-two(
       format: format,
       primary: institution,
-      secondary: degree,
+      secondary: degree-text,
       dates: dates,
       location: location,
       swap-primary: false,
